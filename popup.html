@@ -1,0 +1,63 @@
+<html>
+
+<body>
+     <style>
+          table tr td {
+               text-align: center;
+               padding: 5px;
+          }    
+         
+          .form1 {
+               background-color: #16A05D;
+               color: white;
+          }
+
+          .form3 {
+               background-color: #518FF5;
+               color: white;
+          }
+
+          button {
+               width: 100px;
+               margin: 10px;
+          }
+     </style>
+     <table style='width:100%;' border='1' id='tableContent'>
+          <tr>
+               <td colspan='3' style='font-weight:bold;'>New</td>
+          </tr>
+          <tr>
+               <td class='form1'>ACK Receipt</td>
+               <td class='form3'>Back Office</td>
+          </tr>
+          <tr>
+               <td class='form1'>
+                    <button type="button" id="btnSource">Copy</button><br />
+                    <button type="button" id="btnTarget">Paste</button>
+               </td>
+               <td class='form3'>
+                    <button type="button" id="btnNewSteelCopy">Copy</button><br />
+                    <button type="button" id="btnNewSteelPaste">Paste</button>
+               </td>
+          </tr>
+          <tr>
+               <td colspan='3' style='font-weight:bold;'>Correction</td>
+          </tr>
+          <tr>
+               <td class='form1'>
+                    <button type="button" id="btnCorrectionCopy">Copy</button><br />
+                    <button type="button" id="btnCorrectionPastName">Paste Name</button>
+                    <button type="button" id="btnCorrectionPasteAll">Paste All</button>
+               </td>             
+               <td class='form3'>
+                    <button type="button" id="btnCorrectionSteelCopy">Copy</button><br />
+                    <button type="button" id="btnCorrectionSteelPaste">Paste</button>
+               </td>
+          </tr>
+          
+     </table>
+     <script src="jquery-3.4.1.min.js"></script>
+     <script src="popup.js"></script>
+</body>
+
+</html>

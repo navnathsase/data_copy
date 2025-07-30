@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Form Data Copier",
+  "description": "Copies form data and stores it in local storage",
+  "version": "1.0",
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "https://efasttech.in/*",
+    "http://localhost/*",
+    "https://www.onlineservices.nsdl.com/*"
+  ],
+  "content_scripts": [ 
+    {
+      "matches": [
+        "https://efasttech.in/*",
+        "http://localhost/*",
+        "https://www.onlineservices.nsdl.com/*"
+      ],
+      "js": [
+        "lib/jquery-3.4.1.min.js",   
+        "paste_form.js"            
+      ],
+      "run_at": "document_idle"    
+    }
+  ]
+}
