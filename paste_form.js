@@ -9,6 +9,10 @@ if (typeof jQuery === 'undefined' || typeof $ === 'undefined') {
     // or inject your own copy.
     console.error("jQuery is not defined in content script's isolated world. Trying to inject or wait.");
 
+    // Without jQuery available there's no point in executing the rest of the
+    // script. Return early so we don't hit runtime errors later on.
+    return;
+
     // Option A: Try to get jQuery from the page's window object.
     // This is often the best approach for content scripts that interact with existing page elements.
     // However, it relies on 'window.jQuery' being exposed by the page's script.
