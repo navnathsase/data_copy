@@ -1,36 +1,6 @@
-// paste_form.js
 
-// Try to access jQuery from the window object.
-// This is the safest way to ensure it's available in your isolated world
-// if the page itself has loaded it.
-if (typeof jQuery === 'undefined' || typeof $ === 'undefined') {
-    // If jQuery is not defined, this means it hasn't loaded yet or isn't accessible.
-    // For a content script, you might need to wait for the page to load it,
-    // or inject your own copy.
-    console.error("jQuery is not defined in content script's isolated world. Trying to inject or wait.");
-
-    // Option A: Try to get jQuery from the page's window object.
-    // This is often the best approach for content scripts that interact with existing page elements.
-    // However, it relies on 'window.jQuery' being exposed by the page's script.
-    // This might require running in 'main' world in manifest v3, which is more complex.
-    // For now, let's assume the basic 'isolated world' and try to get it if it's truly global.
-    // The most common reason for '$ is not defined' is simply that your script runs too early.
-
-    // A better approach for timing is to ensure your script runs after DOMContentLoaded.
-    // This is typically handled by 'document_end' or 'document_idle' in manifest.json.
-    // Let's ensure your manifest.json is correctly configured.
-
-}
-
-// Wrap your entire form-filling logic inside a function that runs when the DOM is ready
-// This is crucial for both timing and ensuring elements exist.
-$(document).ready(function() { // This line itself requires $ to be defined!
-
-    console.log("jQuery is now available and DOM is ready.");
-
-    // Your existing form-filling code goes here:
-    chrome.storage.local.get('formData', function (storageData) {
-        console.log("Step 1: Retrieved formData:", storageData);
+chrome.storage.local.get('formData', function (storageData) {
+     console.log(storageData);
 
      const data = storageData.formData;
      const changeEvent = new Event('change');
