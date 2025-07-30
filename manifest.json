@@ -19,19 +19,5 @@
     "https://efasttech.in/*",
     "http://localhost/*",
     "https://www.onlineservices.nsdl.com/*"
-  ],
-  "content_scripts": [ 
-    {
-      "matches": [
-        "https://efasttech.in/*",
-        "http://localhost/*",
-        "https://www.onlineservices.nsdl.com/*"
-      ],
-      "js": [
-        "lib/jquery-3.4.1.min.js",   
-        "paste_form.js"            
-      ],
-      "run_at": "document_idle"    
-    }
   ]
 }
