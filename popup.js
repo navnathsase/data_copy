@@ -7,11 +7,12 @@ function doContent() {
      });
 }
 
+
 function doTarget() {
      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
           chrome.scripting.executeScript({
                target: { tabId: tabs[0].id },
-               files: ['lib/jquery-3.4.1.min.js', 'paste_form.js'] // <--- CHANGED THIS LINE
+               files: ['paste_form.js']
           });
      });
 }
